@@ -5,7 +5,6 @@
 package rzi.j17sandbox;
 
 import java.awt.BorderLayout;
-import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.EventQueue;
@@ -66,7 +65,7 @@ public class J17SandBox extends JFrame implements ActionListener {
         setLayout(new BorderLayout());  // Will use only EAST and CENTER
 
         JPanel leftButtonPanel = new JPanel();
-        leftButtonPanel.setLayout(new GridLayout(5,1));
+        leftButtonPanel.setLayout(new GridLayout(5, 1, 5, 10));
         m_startInfoModulButton.addActionListener(this);
         m_startLayoutModulButton.addActionListener(this);
         m_startLookAndFeelModulButton.addActionListener(this);
@@ -78,28 +77,10 @@ public class J17SandBox extends JFrame implements ActionListener {
         leftButtonPanel.add(m_startLookAndFeelModulButton);
         leftButtonPanel.add(m_NTPTimeModulButton);
         leftButtonPanel.add(m_cancelButton);
+        
         add(leftButtonPanel, BorderLayout.WEST);
-//        int buttonMaxHeight = 0;
-//        int buttonMaxWidth = 0;
-        add(leftButtonPanel, BorderLayout.WEST);
+//        add(leftButtonPanel, BorderLayout.WEST);
         center(this, WINDOW_WIDTH, WINDOW_HEIGHT);
-//        Component[] allComponents = leftButtonPanel.getComponents();
-//        for (Component c: allComponents) {
-//            if (c instanceof JButton b) {
-//                Dimension size = b.getPreferredSize();
-//                buttonMaxHeight = Integer.max(buttonMaxHeight, size.height);
-//                buttonMaxWidth = Integer.max(buttonMaxWidth, size.width);
-//            }
-//        }
-//        for (Component c:allComponents)
-//            if (c instanceof JButton b) {
-//                Dimension dim = new Dimension(buttonMaxWidth, buttonMaxHeight);
-//                b.setPreferredSize(dim);
-//                b.setSize(dim);
-//            }
-//
-//
-// Center the Window on the screen        
         setVisible(true);
     }
 
@@ -139,7 +120,7 @@ public class J17SandBox extends JFrame implements ActionListener {
             System.out.println("performInfoPanel -- removing last panal");
         }
         InfoModule dialog = new InfoModule();
-        add(BorderLayout.CENTER, dialog);
+        add(dialog, BorderLayout.CENTER);
         revalidate();
         repaint();
         dialog.doAction();
@@ -156,7 +137,7 @@ public class J17SandBox extends JFrame implements ActionListener {
             print("performLookAndFeelPanel -- removing last panal");
         }
         LookAndFeelModule dialog = new LookAndFeelModule();
-        add(BorderLayout.CENTER, dialog);
+        add(dialog, BorderLayout.CENTER);
         revalidate();
         repaint();
         m_lastPanel = dialog;
