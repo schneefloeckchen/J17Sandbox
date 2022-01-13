@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package rzi.j17sandbox;
 
 import java.awt.BorderLayout;
@@ -41,12 +37,16 @@ import rzi.j17sandbox.modules.reflectionModule.ReflectionModule;
  * -- Info: Gibt irgendwelche Infos zum System aus
  * -- LayoutModule: Popup Window, analysieren der LayoutManager/2 Interface.
  * -- lafModule: Spielen mit verschiedenen Look and Feels.
+ * -- httpRequestModule: Http Comm w. NASA's Horizon System and the German kicker.de
+ *    socker news portal.
  * -- (neu) : Reflection Review
  * -- (neu) : Classloader und jar Analyse
  *
  * Build-prozess ist Maven.
  *
- * @author rene
+ * @author rene zillmann
+ * 13.1.22: 0.2 HttpRequestModule finished
+ *
  */
 @AppInfo (
     authorName = "Rene Zillmann",
