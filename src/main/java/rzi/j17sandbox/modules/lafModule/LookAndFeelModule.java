@@ -6,19 +6,16 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
-import javax.swing.LookAndFeel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.synth.SynthLookAndFeel;
-import mikera.ui.steampunk.SteamPunkStyleFactory;
+//import mikera.ui.steampunk.SteamPunkStyleFactory;
 import rzi.j17sandbox.J17SandBox;
 
 /**
@@ -86,7 +83,8 @@ public class LookAndFeelModule extends JPanel implements ActionListener {
         } catch (UnsupportedLookAndFeelException ex) {
             ex.printStackTrace();
         }
-        SynthLookAndFeel.setStyleFactory(new SteamPunkStyleFactory());
+//        SynthLookAndFeel.setStyleFactory(new SteamPunkStyleFactory());
+        System.out.println("Steampunk L&F not installed");
     }
 
     /** ActionListener Implementation */
