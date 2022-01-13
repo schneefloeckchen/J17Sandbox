@@ -51,7 +51,7 @@ import rzi.j17sandbox.modules.reflectionModule.ReflectionModule;
 @AppInfo (
     authorName = "Rene Zillmann",
     lastEditDate = "Jan2022",
-    version = "0.1"
+    version = "0.2"
 )
 public class J17SandBox extends JFrame implements ActionListener {
 
