@@ -22,6 +22,7 @@ import rzi.j17sandbox.modules.jarModule.MaintainJarFileModule;
 import rzi.j17sandbox.modules.layoutModule.LayoutTester;
 import rzi.j17sandbox.modules.ntpModule.NTPModule;
 import rzi.j17sandbox.modules.reflectionModule.ReflectionModule;
+import rzi.j17sandbox.modules.twitterModule.TwitterModule;
 
 /**
  * Einstiegs-Dialog der Sandbox - Prinzipielles Layout:
@@ -37,8 +38,9 @@ import rzi.j17sandbox.modules.reflectionModule.ReflectionModule;
  * -- Info: Gibt irgendwelche Infos zum System aus
  * -- LayoutModule: Popup Window, analysieren der LayoutManager/2 Interface.
  * -- lafModule: Spielen mit verschiedenen Look and Feels.
- * -- httpRequestModule: Http Comm w. NASA's Horizon System and the German kicker.de
- *    socker news portal.
+ * -- httpRequestModule: Http Comm w. NASA's Horizon System and the German
+ * kicker.de
+ * socker news portal.
  * -- (neu) : Reflection Review
  * -- (neu) : Classloader und jar Analyse
  *
@@ -48,7 +50,7 @@ import rzi.j17sandbox.modules.reflectionModule.ReflectionModule;
  * 13.1.22: 0.2 HttpRequestModule finished
  *
  */
-@AppInfo (
+@AppInfo(
     authorName = "Rene Zillmann",
     lastEditDate = "Jan2022",
     version = "0.2"
@@ -63,6 +65,7 @@ public class J17SandBox extends JFrame implements ActionListener {
   private final JButton m_startClassloaderModuleButton = new JButton("<html>Classloader and<br>jar Test</html>");
   private final JButton m_startAnnotationModuleButton = new JButton("<html>Annotation Test</html>");
   private final JButton m_httpRequestModuleButton = new JButton("<html>HTTP Requests</html>");
+  private final JButton m_twitterModuleButton = new JButton("<html>Twitter4J API</html>");
   private final JButton m_cancelButton = new JButton("Cancel");
 
   private JPanel m_lastPanel = null;
@@ -81,7 +84,7 @@ public class J17SandBox extends JFrame implements ActionListener {
     setLayout(new BorderLayout());  // Will use only EAST and CENTER
 
     JPanel leftButtonPanel = new JPanel();
-    leftButtonPanel.setLayout(new GridLayout(9, 1, 5, 10));
+    leftButtonPanel.setLayout(new GridLayout(10, 1, 5, 10));
     m_startInfoModuleButton.addActionListener(this);
     m_startLayoutModuleButton.addActionListener(this);
     m_startLookAndFeelModuleButton.addActionListener(this);
@@ -91,6 +94,7 @@ public class J17SandBox extends JFrame implements ActionListener {
     m_startClassloaderModuleButton.addActionListener(this);
     m_startAnnotationModuleButton.addActionListener(this);
     m_httpRequestModuleButton.addActionListener(this);
+    m_twitterModuleButton.addActionListener(this);
 
     leftButtonPanel.add(m_startInfoModuleButton);
     leftButtonPanel.add(m_startLayoutModuleButton);
@@ -100,6 +104,7 @@ public class J17SandBox extends JFrame implements ActionListener {
     leftButtonPanel.add(m_startClassloaderModuleButton);
     leftButtonPanel.add(m_startAnnotationModuleButton);
     leftButtonPanel.add(m_httpRequestModuleButton);
+    leftButtonPanel.add(m_twitterModuleButton);
     leftButtonPanel.add(m_cancelButton);
 
     add(leftButtonPanel, BorderLayout.WEST);
@@ -167,9 +172,14 @@ public class J17SandBox extends JFrame implements ActionListener {
   private void performAnnotationModule() {
     switchTo(new AnnotationModule());
   }
-  
+
   private void performHttpRequestModule() {
-    switchTo (new HttpRequestModule());
+    switchTo(new HttpRequestModule());
+  }
+
+  private void performTwitterModule() {
+    TwitterModule tm = new TwitterModule();
+    tm.displayTimeline();
   }
 
   private void switchTo(JPanel newPanel) {
@@ -203,6 +213,8 @@ public class J17SandBox extends JFrame implements ActionListener {
       performAnnotationModule();
     else if (src == m_httpRequestModuleButton)
       performHttpRequestModule();
+    else if (src == m_twitterModuleButton)
+      performTwitterModule();
     else if (src == m_cancelButton)
       dispose();
     else

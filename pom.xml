@@ -45,6 +45,11 @@
             <version>3.8.0</version>
         </dependency>
         <dependency>
+          <groupId>org.twitter4j</groupId>
+          <artifactId>twitter4j-stream</artifactId>
+          <version>4.0.7</version>
+        </dependency>
+        <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
             <version>1.13</version>
