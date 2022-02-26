@@ -178,8 +178,9 @@ public class J17SandBox extends JFrame implements ActionListener {
   }
 
   private void performTwitterModule() {
-    TwitterModule tm = new TwitterModule();
-    tm.displayTimeline();
+    switchTo(new TwitterModule());
+//    TwitterModule tm = new TwitterModule();
+//    tm.displayTimeline();
   }
 
   private void switchTo(JPanel newPanel) {

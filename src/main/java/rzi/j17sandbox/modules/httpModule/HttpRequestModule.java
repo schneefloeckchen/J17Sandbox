@@ -4,9 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -31,7 +29,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import org.apache.commons.codec.binary.Hex;
 import org.json.JSONException;
-import org.json.JSONObject;
 import rzi.j17sandbox.modules.BasPanel;
 import rzi.utils.TablePopup;
 
