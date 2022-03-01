@@ -2,6 +2,9 @@
 package rzi.j17sandbox.modules;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -23,6 +26,13 @@ public class BasPanel extends JPanel {
     add(new JScrollPane(m_reportArea), BorderLayout.CENTER);
 
   }
+  
+  protected void center() {
+      
+      Toolkit toolkit = Toolkit.getDefaultToolkit();
+      Dimension screnSize = toolkit.getScreenSize();
+  }
+  
   
   protected void write(String text) {
     m_reportArea.append(text + "\n");

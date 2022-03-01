@@ -51,11 +51,11 @@ import twitter4j.conf.ConfigurationBuilder;
  */
 public class TwitterModule extends BasPanel implements ActionListener {
 
-  private JButton m_homeTimeLineButton = new JButton(
+  private final JButton m_homeTimeLineButton = new JButton(
       "Home-Timeline");
-  private JButton m_homeTimeLineDetailsButton = new JButton(
+  private final JButton m_homeTimeLineDetailsButton = new JButton(
       "Home-Timeline w. Details");
-  private JButton m_userMeButton = new JButton("User Me");
+  private final JButton m_userMeButton = new JButton("User Me");
   private Twitter m_twitter = null;
 
   private Properties m_properties;
