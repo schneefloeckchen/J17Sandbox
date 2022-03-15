@@ -85,7 +85,6 @@ public class TwitterModule extends BasPanel implements ActionListener {
           .collect(Collectors.toList());
       write("Laenge der TimeLine: " + timeline.size());
       timeline.forEach(line -> {
-//        System.out.println(">> " + line);
         write(line);
       });
     } catch (TwitterException ex) {
